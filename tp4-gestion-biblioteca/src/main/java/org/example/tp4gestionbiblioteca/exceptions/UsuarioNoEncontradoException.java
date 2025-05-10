@@ -6,5 +6,4 @@ public class UsuarioNoEncontradoException extends RuntimeException {
         super("No se encontró el Usuario con ID: " + id);
     }
 
-
 }
