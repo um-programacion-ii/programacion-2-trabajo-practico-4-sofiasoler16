@@ -193,11 +193,13 @@ mvn test
 mvn spring-boot:run
 ```
 2. Realizar ejemplos:
-```bash curl -X GET http://localhost:8080/api/libros 
+```bash 
+curl -X GET http://localhost:8080/api/libros 
 ```
 Devuelve lista vacia: []
 
-```bash curl -X POST http://localhost:8080/api/libros \ \
+```bash 
+curl -X POST http://localhost:8080/api/libros \ \
   -H "Content-Type: application/json" \
   -d '{
     "isbn": "A123",
@@ -208,12 +210,14 @@ Devuelve lista vacia: []
 ```
 Agrega libro
 
-```bash curl -X GET http://localhost:8080/api/libros/A123
+```bash 
+curl -X GET http://localhost:8080/api/libros/A123
 ```
 Devuelve libro de isbn = A123
 
 
-```bash curl -X DELETE http://localhost:8080/api/libros/1
+```bash 
+curl -X DELETE http://localhost:8080/api/libros/1
 ```
 Elimina libro de id = 1
 
