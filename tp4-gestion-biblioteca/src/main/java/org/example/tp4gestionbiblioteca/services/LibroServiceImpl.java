@@ -40,7 +40,7 @@ public class LibroServiceImpl implements LibroService {
     @Override
     public Libro actualizar(Long id, Libro libro) {
         if (!libroRepository.existsById(id)) {
-            throw new LibroNoEncontradoException(id);
+            throw new LibroNoEncontradoException(id.toString());
         }
         libro.setId(id);
         return libroRepository.save(libro);
