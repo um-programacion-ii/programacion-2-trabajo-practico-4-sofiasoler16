@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Vg2EF-QZ)
 # 🚀 Trabajo Práctico: Sistema de Gestión de Biblioteca con Spring Framework
 
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.4.5-green)
@@ -118,8 +119,107 @@ Desarrollar un sistema de gestión de biblioteca utilizando Spring Framework, im
 > 💡 **Nota**: Esta estimación considera la experiencia adquirida en trabajos anteriores y la complejidad de implementar una arquitectura en capas con Spring Framework. El tiempo se ha ajustado considerando que no se requiere implementación de persistencia real.
 
 ## 👨‍🎓 Información del Alumno
-- **Nombre y Apellido**: [Nombre y Apellido del Alumno]
-- **Legajo**: [Número de Legajo]
+- **Nombre y Apellido**: Sofia Soler
+- **Legajo**: 62008
+
+
+## 🖥️ Requisitos del sistema
+
+- Java **21** o superior instalado y configurado en el PATH 
+- Maven **3.6.0** o superior 
+
+## Instrucciones para Correr el Proyecto
+1. Clonar el repo
+```bash
+git@github.com:um-programacion-ii/programacion-2-trabajo-practico-4-sofiasoler16.git
+```
+2. Entrar al directorio del proyecto
+```bash
+ cd tp4-gestion-biblioteca/
+```
+3. Instalar dependencias
+```bash
+mvn clean install
+```
+
+4. Para:
+- ejecutar aplicacion
+```bash
+mvn spring-boot:run
+```
+- correr los test
+```bash
+mvn test
+```
+
+## Documentacion de Endpoints
+(En carpeta Pruebas-postman-HTTP se encuentran pruebas de endpoint para libros)
+
+### Que hacen los endpoints
+
+### 📘 Libros
+
+| Método | Ruta               | Descripción                   |
+|--------|--------------------|-------------------------------|
+| GET    | /api/libros        | Listar todos los libros       |
+| GET    | /api/libros/{isbn} | Obtener un libro por su isbn  |
+| POST   | /api/libros        | Crear un nuevo libro          |
+| PUT    | /api/libros/{id}   | Actualizar un libro existente |
+| DELETE | /api/libros/{id}   | Eliminar un libro por su ID   |
+
+### 👤 Usuarios
+
+| Método | Ruta                  | Descripción                     |
+|--------|-----------------------|---------------------------------|
+| GET    | /api/usuarios         | Listar usuarios                 |
+| GET    | /api/usuarios/{id}    | Obtener un usuario              |
+| POST   | /api/usuarios         | Crear usuario                   |
+| PUT    | /api/usuarios/{id}    | Actualizar un usuario           |
+| DELETE | /api/usuarios/{id}    | Eliminar un usuario por su ID   |
+
+### 📄 Préstamos
+
+| Método | Ruta                   | Descripción                        |
+|--------|------------------------|------------------------------------|
+| GET    | /api/prestamos         | Listar préstamos                   |
+| GET    | /api/prestamos/{id}    | Obtener un préstamo                |
+| POST   | /api/prestamos         | Crear préstamo                     |
+| PUT    | /api/prestamos/{id}    | Actualizar un préstamo             |
+| DELETE | /api/prestamos/{id}    | Eliminar un préstamo por su ID     |
+
+## Ejemplos de uso 
+1. Ejecutar aplicacion
+```bash
+mvn spring-boot:run
+```
+2. Realizar ejemplos:
+```bash 
+curl -X GET http://localhost:8080/api/libros 
+```
+Devuelve lista vacia: []
+
+```bash 
+curl -X POST http://localhost:8080/api/libros \ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "isbn": "A123",
+    "titulo": "Cinder",
+    "autor": "Maxwell",
+    "estado": "DISPONIBLE"
+}'
+```
+Agrega libro
+
+```bash 
+curl -X GET http://localhost:8080/api/libros/A123
+```
+Devuelve libro de isbn = A123
+
+
+```bash 
+curl -X DELETE http://localhost:8080/api/libros/1
+```
+Elimina libro de id = 1
 
 ## 📋 Requisitos Previos
 
