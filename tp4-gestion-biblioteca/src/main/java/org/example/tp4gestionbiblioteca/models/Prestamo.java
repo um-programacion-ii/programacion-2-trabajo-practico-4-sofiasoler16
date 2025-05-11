@@ -15,4 +15,14 @@ public class Prestamo {
     private Usuario usuario;
     private LocalDate fechaPrestamo;
     private LocalDate fechaDevolucion;
+
+    public Prestamo(Long id, Libro libro, Usuario usuario) {
+        this.id = id;
+        this.libro = libro;
+        this.usuario = usuario;
+        this.fechaPrestamo = LocalDate.now();
+        this.fechaDevolucion = fechaPrestamo.plusDays(5);
+    }
+
 }
+

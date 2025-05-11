@@ -32,9 +32,7 @@ class PrestamoServiceImplTest {
     @Test
     void cuandoBuscarPorIdExiste_entoncesRetornaPrestamo() {
         Long id = 1L;
-        LocalDate fechaPrestamo = LocalDate.now();
-        LocalDate fechaDevolucion = fechaPrestamo.plusDays(5);
-        Prestamo prestamo = new Prestamo(id, new Libro(), new Usuario(), fechaPrestamo, fechaDevolucion);
+        Prestamo prestamo = new Prestamo(id, new Libro(), new Usuario());
 
         when(prestamoRepository.findById(id)).thenReturn(Optional.of(prestamo));
 
